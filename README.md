@@ -174,7 +174,7 @@ If you find a bug or have a suggestion:
 
 ### Code Contribution Guidelines
 
-- Follow [PEP 8](https://pep8.org/) style guide for Python code
+- Follow [PEP 8](https://peps.python.org/pep-0008/) style guide for Python code
 - Write clear, self-documenting code with appropriate comments
 - Add unit tests for new features
 - Update documentation as needed
