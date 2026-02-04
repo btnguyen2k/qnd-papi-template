@@ -2,7 +2,11 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A quick-and-dirty template repository to rapidly spin up a Python API server with containerization support.
+A template repository to quickly spin up a Python API server with containerization support.
+
+## 🛠 How to use this template
+
+Simple click the **Use this template** button on the top-right corner of the GitHub repository page to create your own repository based on this template.
 
 ## 📋 Table of Contents
 
@@ -22,93 +26,18 @@ A quick-and-dirty template repository to rapidly spin up a Python API server wit
 - **🔧 Modular Architecture**: Clean project structure for easy customization
 - **📦 Dependency Management**: Pre-configured dependency management with requirements.txt
 - **🚀 Production Ready**: Configured for both development and production environments
-- **🔒 Security Best Practices**: Follows Python security guidelines
-- **📝 Well Documented**: Comprehensive documentation and code comments
-- **🧪 Test Ready**: Structure supports unit and integration testing
-- **🔄 CI/CD Friendly**: Easy integration with continuous integration and deployment pipelines
+- **🔄 CI/CD Friendly**: Provided with working GitHub Actions workflows for continuous integration and deployment
 
-## 📦 Prerequisites
+## GitHub Flow
 
-Before you begin, ensure you have the following installed:
+This template provides working GitHub Actions workflows implementing the following GitHub Flow:
 
-- **Python 3.8+**: [Download Python](https://www.python.org/downloads/)
-- **pip**: Python package installer (usually comes with Python)
-- **Docker** (optional): [Install Docker](https://docs.docker.com/get-docker/)
-- **Git**: [Install Git](https://git-scm.com/downloads)
+![GitHub Flow](./docs/sample_gitflow.svg)
 
-## 🚀 Getting Started
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/btnguyen2k/qnd-papi-template.git
-cd qnd-papi-template
-```
-
-### 2. Create a Virtual Environment
-
-```bash
-# Create virtual environment
-python -m venv venv
-
-# Activate virtual environment
-# On Linux/macOS:
-source venv/bin/activate
-# On Windows:
-venv\Scripts\activate
-```
-
-### 3. Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Run the API Server
-
-```bash
-python app.py
-```
-
-The API server should now be running on `http://localhost:8000` (or your configured port).
-
-## 🐳 Docker Support
-
-This project includes a Dockerfile for containerization, making it easy to deploy in any environment.
-
-### Build Docker Image
-
-```bash
-docker build -t qnd-papi-template .
-```
-
-### Run Docker Container
-
-```bash
-docker run -p 8000:8000 qnd-papi-template
-```
-
-### Using Docker Compose (if available)
-
-```bash
-docker-compose up
-```
-
-## 📖 Usage
-
-### Basic API Endpoint
-
-Example of making a request to the API:
-
-```bash
-curl http://localhost:8000/api/v1/health
-```
-
-### API Documentation
-
-Once the server is running, you can access the API documentation at:
-- Swagger UI: `http://localhost:8000/docs`
-- ReDoc: `http://localhost:8000/redoc`
+- Features are developed and merged into `dev` branch. CI workflow runs on every push.
+- Once development is complete and tested, `dev` branch is merged into `release` branch for release preparation.
+- Release workflow runs on every closed PR to `release` branch, performing tasks such as version bumping, building, testing, packaging, and publishing/deploying artifacts (if applicable).
+- Finally, `release` branch is merged into `main` branch for baseline.
 
 ## 🤝 Contributing
 
@@ -150,8 +79,8 @@ If you find a bug or have a suggestion:
    pytest
    
    # Run linters
-   flake8 .
-   black --check .
+   flake8 ./app
+   black --check ./app
    ```
 
 6. **Commit your changes** with clear, descriptive messages:
@@ -180,25 +109,6 @@ If you find a bug or have a suggestion:
 - Update documentation as needed
 - Ensure all tests pass before submitting PR
 - Keep pull requests focused on a single feature or fix
-
-### Development Setup
-
-For contributors who want to set up the development environment:
-
-```bash
-# Install development dependencies
-pip install -r requirements-dev.txt
-
-# Run tests
-pytest
-
-# Check code style
-flake8 .
-black --check .
-
-# Format code
-black .
-```
 
 ## 📄 License
 
