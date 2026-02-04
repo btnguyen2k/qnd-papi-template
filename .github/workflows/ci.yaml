@@ -34,7 +34,6 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install pytest flake8 black
       - name: Run tests
         run: |
           # Run unit tests
@@ -86,7 +85,7 @@ jobs:
 
   ReleaseDryRun:
     if: github.event_name == 'push'
-    needs: BuildDockerAndQuickTest
+    needs: [BuildAndTest, BuildDockerAndQuickTest]
     runs-on: ubuntu-latest
     outputs:
       RESULT: ${{ steps.release_dry_run.outputs.result }}
