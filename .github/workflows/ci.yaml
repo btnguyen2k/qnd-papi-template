@@ -22,8 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        platforms: [ 'linux/amd64', 'linux/arm64' ]
-        dockerfiles: [ 'Dockerfile' ]
+        platforms: [ 'linux/amd64', 'linux/arm64' ] # change target platform list if needed
+        dockerfiles: [ 'Dockerfile' ] # add more Dockerfiles here if needed
     name: Test building Docker image(s) for Linux
     steps:
       - name: Checkout code
