@@ -73,7 +73,7 @@ jobs:
             -p 1234:8000 \
             --platform ${{ matrix.platforms }} \
             test)
-          sleep 30 # Wait for the container to start and bootstrap, increase wait time if needed
+          sleep 10 # Wait for the container to start and bootstrap, increase wait time if needed
           docker logs ${CONTAINER}
           STATUS_OUTPUT=$(curl http://localhost:1234/health)
           echo "ℹ️ Health check output: $STATUS_OUTPUT"
