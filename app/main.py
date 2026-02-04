@@ -35,6 +35,7 @@ app = FastAPI(
         "name": "MIT",
         "url": "https://github.com/btnguyen2k/qnd-papi-template/blob/main/LICENSE.md",
     },
+    swagger_ui_parameters={"syntaxHighlight.theme": "obsidian"} # Custom theme
 )
 
 from .routers import demo

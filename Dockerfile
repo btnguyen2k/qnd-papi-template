@@ -23,6 +23,9 @@ RUN useradd --system --create-home --home-dir $HOMEDIR --shell /bin/bash --uid $
 COPY --from=build --chown=$USERNAME $HOMEDIR $HOMEDIR
 USER $USERNAME
 WORKDIR $HOMEDIR
+
+ENV LISTEN_PORT=8000
+ENV NUM_WORKERS=2
 EXPOSE 8000
 
 # Prevents Python from writing pyc files to disc (equivalent to python -B option)

@@ -1,10 +1,10 @@
 from pydantic import BaseModel
-from typing import Optional
+from typing import Optional, Any
 
 class DemoBaseResponse(BaseModel):
     status: int
     message: str
-    data: Optional[any] = None
+    data: Optional[Any] = None
 
     model_config = {
         "arbitrary_types_allowed": True
