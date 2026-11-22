@@ -1,7 +1,7 @@
 fastapi==0.162.5
 uvicorn[standard]==0.54.0
 pydantic==2.14.4
-pydantic-settings==2.15.0
+pydantic-settings==2.16.3
 pytest
 flake8
 flake8-toml-config
